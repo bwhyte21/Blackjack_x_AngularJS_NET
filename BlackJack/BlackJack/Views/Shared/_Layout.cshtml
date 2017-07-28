@@ -1,9 +1,12 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en" ng-app="blackjackGame">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - BlackJack!</title>
+    @*Angular Script*@
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -16,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("BlackJack!", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -31,12 +34,19 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - BlackJack!</p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    @*AngularJS Scripts*@
+    <script src="~/Scripts/ang/app.js"></script>
+    <script src="~/Scripts/ang/controllers/mainController.js"></script>
+    <script src="~/Scripts/ang/services/deck.js"></script>
+    <script src="~/Scripts/ang/controllers/gameController.js"></script>
+    <script src="~/Scripts/ang/directives/card.js"></script>
 </body>
 </html>

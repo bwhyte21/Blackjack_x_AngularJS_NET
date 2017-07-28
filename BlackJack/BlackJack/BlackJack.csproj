@@ -133,6 +133,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\ang\app.js" />
+    <Content Include="Scripts\ang\controllers\gameController.js" />
+    <Content Include="Scripts\ang\controllers\mainController.js" />
+    <Content Include="Scripts\ang\directives\card.js" />
+    <Content Include="Scripts\ang\services\deck.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
