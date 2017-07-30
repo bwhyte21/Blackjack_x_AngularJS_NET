@@ -2,29 +2,67 @@
     ViewBag.Title = "Home Page";
 }
 
-<div ng-controller="GameCtrl">
-    <div id="scoreboard" class="jumbotron">
-        <div class="col-xs-6">Dealer</div>
-        <div class="col-xs-6">Player</div>
-        <div class="col-xs-6">{{dealerRoundsWon}}</div>
-        <div class="col-xs-6">{{playerOneRoundsWon}}</div>
+<div ng-controller="GameController">
+    <div class="jumbotron">BLACKJACK!</div>
+    @*Scoreboard Section*@
+    <div class="well">
+        <div id="scoreboard" class="row">
+            <div class="col-xs-3">Dealer</div>
+            <div class="col-xs-3">Player One</div>
+            <div class="col-xs-3">Player Two</div>
+            <div class="col-xs-3">Player Three</div>
+            <div class="col-xs-3">{{dealerRoundsWon}}</div>
+            <div class="col-xs-3">{{playerOneRoundsWon}}</div>
+            <div class="col-xs-3">{{playerTwoRoundsWon}}</div>
+            <div class="col-xs-3">{{playerThreeRoundsWon}}</div>
+        </div>
     </div>
     @*Dealer Section*@
     <div class="well">
         <div id="dealerCards" class="row">
-            <div ng-repeat="card in dealerCards">
-                <div>Suit: {{card.suit}}</div>
-                <div>Value: {{card.value}}</div>
-                <div first="{{$first}}"></div>
+            <div>Dealer:</div>
+            <div class="col-xs-8">
+                <div ng-repeat="card in dealerCards" class="rotate-in">
+                    <div card suit="{{card.suit}}" value="{{card.value}}" first="{{$first}}"></div>
+                    @*<div>Suit: {{card.suit}}</div>
+                        <div>Value: {{card.value}}</div>
+                        <div first="{{$first}}"></div>*@
+                </div>
             </div>
         </div>
     </div>
     @*Player One Section*@
     <div class="well">
         <div id="playerOneCards" class="row">
-            <div ng-repeat="card in playerOneCards">
-                <div>Suit: {{card.suit}}</div>
-                <div>Value: {{card.value}}</div>
+            <div>Player One: (You)</div>
+            <div class="col-xs-8">
+                <div ng-repeat="card in playerOneCards" class="rotate-in">
+                    <div card suit="{{card.suit}}" value="{{card.value}}"></div>
+                    @*<div>Suit: {{card.suit}}</div>
+                        <div>Value: {{card.value}}</div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Player Two Section*@
+    <div class="well">
+        <div id="playerTwoCards" class="row">
+            <div>Player Two:</div>
+            <div class="col-xs-8">
+                <div ng-repeat="card in playerTwoCards" class="rotate-in">
+                    <div card suit="{{card.suit}}" value="{{card.value}}" first="{{$first}}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Player Three Section*@
+    <div class="well">
+        <div id="playerThreeCards" class="row">
+            <div>Player Three:</div>
+            <div class="col-xs-8">
+                <div ng-repeat="card in playerThreeCards" class="rotate-in">
+                    <div card suit="{{card.suit}}" value="{{card.value}}" first="{{$first}}"></div>
+                </div>
             </div>
         </div>
     </div>
